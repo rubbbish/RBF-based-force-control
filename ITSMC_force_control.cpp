@@ -113,14 +113,14 @@ void ITSMC_REF_force_control(void)
         for (int i = 0; i < 36; ++i) {
             J[i] = jacobian[i];
         }
-        Xd=0.35+0.05*cos((pi/5)*t);
-        Yd=0+0.05*sin((pi/5)*t);
+        Xd=0.35+0.05*cos((pi/15)*t);
+        Yd=0+0.05*sin((pi/15)*t);
         Zp=0.4;
 
-        dXd=-0.01*pi*sin((pi/5)*t);
-        dYd=0.01*pi*cos((pi/5)*t);
-        ddXd=-0.002*pi*pi*cos((pi/5)*t);
-        ddYd=-0.002*pi*pi*sin((pi/5)*t);
+        dXd=-(pi/300)*sin((pi/15)*t);
+        dYd=(pi/300)*cos((pi/15)*t);
+        ddXd=-(pi*pi/4500)*cos((pi/15)*t);
+        ddYd=-(pi*pi/4500)*sin((pi/15)*t);
 
         double* sensor_values1 = read_sensor();
         for (int k = 0; k < 6; ++k) {
